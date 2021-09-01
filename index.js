@@ -1,10 +1,10 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
 
-const token = 'ODgyNjU3NDA4MDAwODgwNjQw.YS-kxQ.0-1SXuqIxoWec652qertw0iNrZY';
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+client.once('ready', () => {
+    console.log(`Bot ready!`);
 });
 
 client.on('message', msg => {
