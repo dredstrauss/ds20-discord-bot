@@ -21,7 +21,7 @@ client.on('interactionCreate', async interaction => {
 
     const command = client.commands.get(interaction.commandName);
 
-    if (!comand) return;
+    if (!command) return;
 
     try {
         await command.execute(interaction);
