@@ -1,16 +1,35 @@
-const { Client, Intents } = require('discord.js');
+const fs = require('fs');
+const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.data.name, command);
+}
 
 client.once('ready', () => {
     console.log(`Bot ready!`);
 });
 
-client.on('message', msg => {
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
+    if (interaction.user.bot) return;
 
-    if (msg.content.startsWith('ds' || 'DS' || 'Ds' || 'dS')) {
-        msg.reply(`I'm here...`);
+    const nick = message.member.displayname;
+    const command = client.commands.get(interaction.commandName);
+
+    if (!comand) return;
+
+    try {
+        await command.execute(interaction);
+    } catch (e) {
+        console.error(r);
+        await interaction.reply({ content: 'Error... Oops!', ephemeral: true })
     }
 
 });
