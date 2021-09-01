@@ -17,9 +17,8 @@ client.once('ready', () => {
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
-    if (interaction.user.bot) return;
+    // if (interaction.user.bot) return;
 
-    const nick = message.member.displayname;
     const command = client.commands.get(interaction.commandName);
 
     if (!comand) return;
@@ -27,8 +26,8 @@ client.on('interactionCreate', async interaction => {
     try {
         await command.execute(interaction);
     } catch (e) {
-        console.error(r);
-        await interaction.reply({ content: 'Error... Oops!', ephemeral: true })
+        console.error(e);
+        await interaction.reply({ content: 'Error... Oops!', ephemeral: true });
     }
 
 });
