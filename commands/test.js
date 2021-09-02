@@ -3,7 +3,7 @@ const roll = require('../Roll');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('ds')
+    .setName('test')
     .setDescription('Comprobar que el Bot está funcionando'),
     async execute(interaction) {
         await interaction.reply(
