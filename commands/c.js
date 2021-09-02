@@ -37,30 +37,18 @@ module.exports = {
         const diceRolls = {
             d20 : parseInt(roll(20)),
             arrBon : (function() {
-<<<<<<< HEAD
-                if (bon > 0) {
-                    let arr = [];
-                    for (let i = 0; i < bon; i++) { arr.push(roll(4)) };
-=======
                 if (args.bon > 0) {
                     let arr = [];
                     for (let i = 0; i < args.bon; i++) { arr.push(roll(4)) };
->>>>>>> basicroll
                     return arr
                 } else {
                     return [0]
                 }
             }()),
             arrPen : (function() {
-<<<<<<< HEAD
-                if (pen > 0) {
-                    let arr = [];
-                    for (let i = 0; i < pen; i++) { arr.push(roll(4)) };
-=======
                 if (args.pen > 0) {
                     let arr = [];
                     for (let i = 0; i < args.pen; i++) { arr.push(roll(4)) };
->>>>>>> basicroll
                     return arr
                 } else {
                     return [0]
@@ -72,22 +60,14 @@ module.exports = {
 
         const message = {
             bon : (function() {
-<<<<<<< HEAD
-                if (bon > 0) {
-=======
                 if (args.bon > 0) {
->>>>>>> basicroll
                     return ` - Bon.: **-${bon}**`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
-<<<<<<< HEAD
-                if (pen > 0) {
-=======
                 if (args.pen > 0) {
->>>>>>> basicroll
                     return ` - Pen.: **+${pen}**`
                 } else {
                     return ''
