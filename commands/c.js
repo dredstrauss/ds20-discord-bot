@@ -4,45 +4,67 @@ const tirada = require('../Roll');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('c')
+<<<<<<< HEAD
     .setDescription(`Tirada de característica: /c c[característica] b[bonificación] p[penalización]`),
+=======
+    .setDescription(`Tirada de característica: /c [característica] [bonificación] [penalización]`)
+    .addStringOption(option =>
+        option.setName('caracteristica')
+        .setDescription('Puntaje de la característica a usar')
+        .setRequired(true)
+    )
+    .addStringOption(option =>
+        option.setName('bonificacion')
+        .setDescription('Bonificaciones (0 o más)')
+        .setRequired(true)
+    )
+    .addStringOption(option =>
+        option.setName('penalizacion')
+        .setDescription('Penalizaciones (0 o más)')
+        .setRequired(true)
+    ),
+>>>>>>> basicroll
     async execute(interaction) {
-        const input = message.content.slice(prefix.length).trim().split(/ +/g);
-        const args = input.shift().toLowerCase();
+        const between099 = (val) => {
+            let num = parseInt(val);
+            if (num > 99) { num = 99 }
+            if (num < 0) { num *= -1 }
+            return num
+        }
 
-        let cha = 10;
-        let bon = 0;
-        let pen = 0;
-
-        args.forEach((rawArg) => {
-            const arg = rawArg.charAt(0);
-            let num = rawArg.slice(1);
-            let value = 0;
-            if (num.length > 2) {
-                num = 99;
-            } else {
-                value = parseInt(num);
-                if (value < 0) { value *= -1 }
-            };
-            if (arg == 'c') { cha = value };
-            if (arg == 'b') { bon = value };
-            if (arg == 'p') { pen = value };
-        });
+        const args = {
+            cha : between099(interaction.options.getInt('caracteristica')),
+            bon : between099(interaction.options.getInt('bonificacion')),
+            pen : between099(interaction.options.getInt('penalizacion'))
+        }
 
         const diceRolls = {
             d20 : parseInt(roll(20)),
             arrBon : (function() {
+<<<<<<< HEAD
                 if (bon > 0) {
                     let arr = [];
                     for (let i = 0; i < bon; i++) { arr.push(roll(4)) };
+=======
+                if (args.bon > 0) {
+                    let arr = [];
+                    for (let i = 0; i < args.bon; i++) { arr.push(roll(4)) };
+>>>>>>> basicroll
                     return arr
                 } else {
                     return [0]
                 }
             }()),
             arrPen : (function() {
+<<<<<<< HEAD
                 if (pen > 0) {
                     let arr = [];
                     for (let i = 0; i < pen; i++) { arr.push(roll(4)) };
+=======
+                if (args.pen > 0) {
+                    let arr = [];
+                    for (let i = 0; i < args.pen; i++) { arr.push(roll(4)) };
+>>>>>>> basicroll
                     return arr
                 } else {
                     return [0]
@@ -50,18 +72,26 @@ module.exports = {
             }())
         };
 
-        const margin = cha - diceRolls.d20 - diceRolls.arrBon.reduce((x,y)=>x+y) + diceRolls.arrPen.reduce((x,y)=>x+y);
+        const margin = args.cha - diceRolls.d20 - diceRolls.arrBon.reduce((x,y)=>x+y) + diceRolls.arrPen.reduce((x,y)=>x+y);
 
         const message = {
             bon : (function() {
+<<<<<<< HEAD
                 if (bon > 0) {
+=======
+                if (args.bon > 0) {
+>>>>>>> basicroll
                     return ` - Bon.: **-${bon}**`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
+<<<<<<< HEAD
                 if (pen > 0) {
+=======
+                if (args.pen > 0) {
+>>>>>>> basicroll
                     return ` - Pen.: **+${pen}**`
                 } else {
                     return ''
@@ -77,7 +107,7 @@ module.exports = {
         }
 
         await interaction.reply(
-            `Car.: **${cha}**${message.bon}${message.pen}\n`
+            `Car.: **${args.cha}**${message.bon}${message.pen}\n`
             `${message.result}`
         );
     },
