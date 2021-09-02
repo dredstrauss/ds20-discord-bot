@@ -61,14 +61,14 @@ module.exports = {
         const message = {
             bon : (function() {
                 if (args.bon > 0) {
-                    return ` - Bon.: **-${bon}**`
+                    return ` - Bon.: **-${args.bon}**`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
                 if (args.pen > 0) {
-                    return ` - Pen.: **+${pen}**`
+                    return ` - Pen.: **+${args.pen}**`
                 } else {
                     return ''
                 }
