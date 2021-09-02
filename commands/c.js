@@ -4,7 +4,7 @@ const roll = require('../Roll');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('c')
-    .setDescription(`Tirada de característica: /c [característica] [bonificación] [penalización]`)
+    .setDescription(`Tirada de característica (incluye daño de arma de fuego)`)
     .addStringOption(option =>
         option.setName('caracteristica')
         .setDescription('Puntaje de la característica a usar')
@@ -98,12 +98,21 @@ module.exports = {
                     let textBon = '';
                     let textPen = '';
                     if (args.bon > 0) {
-                        textBon = `Bon.: **${diceRolls.arrBon}** `
+                        textBon = ` Bon.: **${diceRolls.arrBon}** `
                     }
                     if (args.pen > 0) {
-                        textPen = `Pen.: **${diceRolls.arrPen}**`
+                        textPen = ` Pen.: **${diceRolls.arrPen}**`
                     }
                     return (textBon + textPen)
+                } else {
+                    return ''
+                }
+            }()),
+            fireDamage : (function() {
+                if (margin > -1) {
+                    let result = margin + diceRolls.arrPen.reduce((x,y)=>x+y);
+                    if (diceRolls.crit == 'crit1') { result += diceRolls.arrPen.reduce((x,y)=>x+y) };
+                    return `*(Daño de arma de fuego: ${result})*`
                 } else {
                     return ''
                 }
@@ -111,10 +120,11 @@ module.exports = {
         }
 
         await interaction.reply(
-            `*Característica: ${args.cha} ${message.bon}${message.pen}*\n`+
-            `>>> *d20: **${diceRolls.d20}** `+
+            `Característica: ${args.cha} ${message.bon}${message.pen}\n`+
+            `>>> *d20: **${diceRolls.d20}**`+
             `${message.bonpen}*\n`+
-            `${message.result}`
+            `${message.result}\n`+
+            `${message.fireDamage}`
         );
     },
 };
