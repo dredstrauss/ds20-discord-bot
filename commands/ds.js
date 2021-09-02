@@ -3,8 +3,8 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('ds')
-    .setDescription('Check if bot is running'),
+    .setDescription('Comprobar que el Bot está funcionando'),
     async execute(interaction) {
-        await interaction.reply(`I'm here!`);
+        await interaction.reply(`¡Aquí estoy! Todo funcionando bien`);
     },
 };
