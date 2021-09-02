@@ -67,22 +67,14 @@ module.exports = {
         const message = {
             bon : (function() {
                 if (args.bon > 0) {
-<<<<<<< HEAD
-                    return ` / Bon.: **-${args.bon}**`
-=======
                     return ` / Bonificaciones: ${args.bon}`
->>>>>>> prod
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
                 if (args.pen > 0) {
-<<<<<<< HEAD
-                    return ` / Pen.: **+${args.pen}**`
-=======
                     return ` / Penalizaciones: ${args.pen}`
->>>>>>> prod
                 } else {
                     return ''
                 }
@@ -96,11 +88,6 @@ module.exports = {
                     }
                 }
                 if (margin < 0) {
-<<<<<<< HEAD
-                    return `\`\`\`diff\nMargen de fallo: ${margin}\n\`\`\``
-                } else {
-                    return `\`\`\`bash\nMargen de éxito: ${margin}\n\`\`\``
-=======
                     return `**Margen de fallo: __${margin}__**`
                 } else {
                     return `**Margen de éxito: __${margin}__**`
@@ -128,7 +115,6 @@ module.exports = {
                     return `*(Daño de arma de fuego: ${result})*`
                 } else {
                     return ''
->>>>>>> prod
                 }
             }())
         }
