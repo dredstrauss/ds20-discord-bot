@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction) {
         await interaction.reply(
             `¡Aquí estoy! Todo funcionando bien\n`+
-            `Prueba de dado d20: *${roll(20)}*`
+            `Prueba de tirada de dado d20: **${roll(20)}**`
         );
     },
 };
