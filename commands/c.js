@@ -83,7 +83,7 @@ module.exports = {
         }
 
         await interaction.reply(
-            `Car.: **${args.cha}**${message.bon}${message.pen}\n`
+            `Car.: **${args.cha}**${message.bon}${message.pen}\n`+
             `${message.result}`
         );
     },
