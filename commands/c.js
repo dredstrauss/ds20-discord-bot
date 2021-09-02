@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules/@discordjs/builders');
-const tirada = require('../Roll');
+const roll = require('../Roll');
 
 module.exports = {
     data: new SlashCommandBuilder()
