@@ -61,23 +61,23 @@ module.exports = {
         const message = {
             bon : (function() {
                 if (args.bon > 0) {
-                    return ` - Bon.: **-${args.bon}**`
+                    return ` / Bon.: **-${args.bon}**`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
                 if (args.pen > 0) {
-                    return ` - Pen.: **+${args.pen}**`
+                    return ` / Pen.: **+${args.pen}**`
                 } else {
                     return ''
                 }
             }()),
             result : (function() {
                 if (margin < 0) {
-                    return `\`\`\`diff\nMargen de fallo: **${margin}**\n\`\`\``
+                    return `\`\`\`diff\nMargen de fallo: ${margin} .❌🔴\n\`\`\``
                 } else {
-                    return `\`\`\`bash\nMargen de éxito: **${margin}**\n\`\`\``
+                    return `\`\`\`bash\nMargen de éxito: ${margin} .✔️🟢\n\`\`\``
                 }
             }())
         }
