@@ -29,9 +29,9 @@ module.exports = {
         }
 
         const args = {
-            cha : between099(interaction.options.getInt('caracteristica')),
-            bon : between099(interaction.options.getInt('bonificacion')),
-            pen : between099(interaction.options.getInt('penalizacion'))
+            cha : between099(interaction.options.getInteger('caracteristica')),
+            bon : between099(interaction.options.getInteger('bonificacion')),
+            pen : between099(interaction.options.getInteger('penalizacion'))
         }
 
         const diceRolls = {
