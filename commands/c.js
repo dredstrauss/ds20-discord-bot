@@ -4,9 +4,6 @@ const tirada = require('../Roll');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('c')
-<<<<<<< HEAD
-    .setDescription(`Tirada de característica: /c c[característica] b[bonificación] p[penalización]`),
-=======
     .setDescription(`Tirada de característica: /c [característica] [bonificación] [penalización]`)
     .addStringOption(option =>
         option.setName('caracteristica')
@@ -23,7 +20,6 @@ module.exports = {
         .setDescription('Penalizaciones (0 o más)')
         .setRequired(true)
     ),
->>>>>>> basicroll
     async execute(interaction) {
         const between099 = (val) => {
             let num = parseInt(val);
