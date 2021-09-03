@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules/@discordjs/builders');
-const roll = require('../Roll');
+
+const roll = require('../modules/Roll');
+const between = require('../modules/Between');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -11,14 +13,8 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction) {
-        const between = (val) => {
-            let num = parseInt(val);
-            if (num > 99) { num = 99 }
-            if (num < -99) { num = -99 }
-            return num
-        }
 
-        let ini = between(interaction.options.getString('iniciativa'));
+        let ini = between(interaction.options.getString('iniciativa'),-99,99);
 
         let results = {
             d10 : 0,
