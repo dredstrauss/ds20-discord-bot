@@ -2,11 +2,12 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 
 const roll = require('../modules/Roll');
 const between = require('../modules/Between');
+const weaponFailure = require('../modules/WeaponFailure');
 
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('c')
-    .setDescription(`Tirada de característica (incluye daño de arma de fuego)`)
+    .setDescription(`Tirada de característica (incluye resultados para armas de fuego)`)
     .addStringOption(option =>
         option.setName('caracteristica')
         .setDescription('Puntaje de la característica a usar')
@@ -108,7 +109,14 @@ module.exports = {
                 if (margin > -1) {
                     let result = margin + diceRolls.arrPen.reduce((x,y)=>x+y);
                     if (diceRolls.crit == 'crit1') { result += diceRolls.arrPen.reduce((x,y)=>x+y) };
-                    return `*(Daño de arma de fuego: ${result})*`
+                    return `*(Daño de arma de fuego: ${result})*\n`
+                } else {
+                    return ''
+                }
+            }()),
+            weaponFailure : (function() {
+                if (diceRolls.crit == 'crit20') {
+                    return `*${weaponFailure()}*`;
                 } else {
                     return ''
                 }
@@ -120,7 +128,8 @@ module.exports = {
             `>>> *d20: **${diceRolls.d20}**`+
             `${message.bonpen}*\n`+
             `${message.result}\n`+
-            `${message.fireDamage}`
+            `${message.fireDamage}`+
+            `${message.weaponFailure}`
         );
     },
 };
