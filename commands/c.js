@@ -98,7 +98,7 @@ module.exports = {
                     let textBon = '';
                     let textPen = '';
                     if (args.bon > 0) {
-                        textBon = ` Bon.: **${diceRolls.arrBon}** `
+                        textBon = ` Bon.: **${diceRolls.arrBon}**`
                     }
                     if (args.pen > 0) {
                         textPen = ` Pen.: **${diceRolls.arrPen}**`
