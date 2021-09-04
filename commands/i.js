@@ -3,8 +3,6 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 const roll = require('../modules/Roll');
 const between = require('../modules/Between');
 
-const between = require('../modules/Between');
-
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('i')
