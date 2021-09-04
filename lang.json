@@ -12,5 +12,27 @@
             "eng":"d20 roll check:",
             "esp":"Prueba de tirada de dado d20:"
         }
+    },
+    "i":{
+        "description":{
+            "eng":"Initiative roll",
+            "esp":"Tirada de iniciativa"
+        },
+        "opt1Name":{
+            "eng":"initiative",
+            "esp":"iniciativa"
+        },
+        "opt1Description":{
+            "eng":"Initiative value (roll modifier)",
+            "esp":"Puntaje iniciativa (modificación a la tirada)"
+        },
+        "message1":{
+            "eng":"Initiative modifier:",
+            "esp":"Modificador de iniciativa:"
+        },
+        "message2":{
+            "eng":"Initiative result:",
+            "esp":"Resultado de iniciativa:"
+        }
     }
 }

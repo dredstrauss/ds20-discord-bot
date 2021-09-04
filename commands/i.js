@@ -3,18 +3,21 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 const roll = require('../modules/Roll');
 const between = require('../modules/Between');
 
+const lang = 'esp';
+const text = require('../lang.json');
+
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('i')
-    .setDescription(`Tirada de iniciativa`)
+    .setDescription(text.i.description[lang])
     .addStringOption(option =>
-        option.setName('iniciativa')
-        .setDescription('Puntaje iniciativa (modificación a la tirada)')
+        option.setName(text.i.opt1Name[lang])
+        .setDescription(text.i.opt1Description[lang])
         .setRequired(true)
     ),
     async execute(interaction) {
 
-        let ini = between(interaction.options.getString('iniciativa'),-99,99);
+        let ini = between(interaction.options.getString(text.i.opt1Name[lang]),-99,99);
 
         let results = {
             d10 : 0,
@@ -25,9 +28,9 @@ module.exports = {
         results.ini = results.d10 + ini;
 
         await interaction.reply(
-            `Modificador de iniciativa: ${ini}\n`+
+            `${text.i.message1[lang]} ${ini}\n`+
             `>>> *d10: **${results.d10}***\n`+
-            `**Resultado de iniciativa: __${results.ini}__**`
+            `**${text.i.message2[lang]} __${results.ini}__**`
         );
     },
 };
