@@ -1,6 +1,6 @@
 {
   "name": "discord-ds20-dice-roller",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "DS-20 Discord bot dice-roller",
   "main": "index.js",
   "engines": {
