@@ -11,8 +11,8 @@ module.exports = {
     .setDescription(text.test.description[lang]),
     async execute(interaction) {
         await interaction.reply(
-            `¡Aquí estoy! Todo funcionando bien\n`+
-            `Prueba de tirada de dado d20: **${roll(20)}**`
+            `${text.test.message1[lang]}\n`+
+            `${text.test.message2[lang]} **${roll(20)}**`
         );
     },
 };
