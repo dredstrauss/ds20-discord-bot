@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 const roll = require('../modules/Roll');
 const between = require('../modules/Between');
 
-const lang = 'esp';
+const lang = process.env.LANGUAGE;
 const text = require('../lang.json');
 
 module.exports = {

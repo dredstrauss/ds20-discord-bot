@@ -1,5 +1,9 @@
 {
     "test":{
+        "name":{
+            "eng":"test",
+            "esp":"test"
+        },
         "description":{
             "eng":"Check if the Bot is running",
             "esp":"Comprobar que el Bot está funcionando"
