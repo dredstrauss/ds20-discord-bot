@@ -162,5 +162,23 @@
             "eng":"Characteristic",
             "esp":"Característica"
         }
+    },
+    "weaponFailure":{
+        "message1":{
+            "eng":"Mechanical failure (fire weapon damaged)",
+            "esp":"Falla mecánica (arma de fuego dañada)"
+        },
+        "message2":{
+            "eng":"Major jamming (fire weapon jammed)",
+            "esp":"Traba mayor (arma de fuego atascada)"
+        },
+        "message3":{
+            "eng":"Minor jamming (faulty bullet)",
+            "esp":"Traba menor (bala defectuosa)"
+        },
+        "message4":{
+            "eng":"Stray bullet (shot hits another target)",
+            "esp":"Bala perdida (disparo llega a otro objetivo)"
+        }
     }
 }

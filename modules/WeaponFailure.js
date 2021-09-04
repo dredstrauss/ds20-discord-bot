@@ -1,11 +1,14 @@
 const roll = require('./Roll');
 
+const lang = process.env.LANGUAGE;
+const text = require('../lang.json');
+
 const weaponFailure = () => {
     let die = roll(20);
-    if (die == 1) {return 'Falla mecánica (arma de fuego dañada)'}
-    else if (die <= 5) {return 'Traba mayor (arma de fuego atascada)'}
-    else if (die <= 10) {return 'Traba menor (bala defectuosa)'}
-    else {return 'Bala perdida (disparo llega a otro objetivo)'}
+    if (die == 1) {return text.weaponFailure.message1[lang]}
+    else if (die <= 5) {return text.weaponFailure.message2[lang]}
+    else if (die <= 10) {return text.weaponFailure.message3[lang]}
+    else {return text.weaponFailure.message4[lang]}
 };
 
 module.exports = weaponFailure;
