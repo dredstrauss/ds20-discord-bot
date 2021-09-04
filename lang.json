@@ -1,0 +1,16 @@
+{
+    "test":{
+        "description":{
+            "eng":"Check if the Bot is running",
+            "esp":"Comprobar que el Bot está funcionando"
+        },
+        "message1":{
+            "eng":"Here I am! Everything seems fine",
+            "esp":"¡Aquí estoy! Todo funcionando bien"
+        },
+        "message2":{
+            "eng":"d20 roll check:",
+            "esp":"Prueba de tirada de dado d20:"
+        }
+    }
+}

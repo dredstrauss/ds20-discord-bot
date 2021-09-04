@@ -2,10 +2,13 @@ const { SlashCommandBuilder } = require('../node_modules/discord.js/node_modules
 
 const roll = require('../modules/Roll');
 
+const lang = 'esp';
+const text = require('../lang.json');
+
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('test')
-    .setDescription('Comprobar que el Bot está funcionando'),
+    .setDescription(text.test.description[lang]),
     async execute(interaction) {
         await interaction.reply(
             `¡Aquí estoy! Todo funcionando bien\n`+
