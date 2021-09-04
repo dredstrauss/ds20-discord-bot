@@ -7,12 +7,20 @@ Invitation link: [ds20-dice-roller-discord-bot](https://discord.com/api/oauth2/a
 Slash command | Options | Description
 --------------|---------|------------
 /test         |         |Check bot status
-/c            |[characteristic][bonifications][penalizations]|Regular characteristic dice roll
-/i            |[initiative modifier]|Initiative roll
-/d            |[die faces][dice number]|Generic dice roll
+/characteristic            |[characteristic][bonifications][penalizations]|Regular characteristic dice roll
+/initiative            |[initiative modifier]|Initiative roll
+/dice            |[die faces][dice number]|Generic dice roll
+
+### Available languages
+
+English ('eng')
+
+Spanish ('esp')
 
 ## Required environment variables in server
 
 TOKEN: Discord bot token
+
 CLIENTID: Discord app Client ID
-LANGUAGE: One of the available languages in lang.json
+
+LANGUAGE: One of the available languages (ie.: 'eng')
