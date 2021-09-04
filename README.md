@@ -1,6 +1,6 @@
 # Dread S20 Dice Roller (Discord Bot)
 
-Invitation link: [ds20-dice-roller-discord-bot](https://discord.com/api/oauth2/authorize?client_id=882657408000880640&permissions=139586726976&scope=bot%20applications.commands)
+Invitation link: [ds20-dice-roller-discord-bot](https://discord.com/api/oauth2/authorize?client_id=882657408000880640&permissions=242702642496&scope=bot%20applications.commands)
 
 ## Commands:
 
