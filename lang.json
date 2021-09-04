@@ -14,6 +14,10 @@
         }
     },
     "i":{
+        "name":{
+            "eng":"ini",
+            "esp":"ini"
+        },
         "description":{
             "eng":"Initiative roll",
             "esp":"Tirada de iniciativa"

@@ -8,7 +8,7 @@ const text = require('../lang.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('i')
+    .setName(text.i.name[lang])
     .setDescription(text.i.description[lang])
     .addStringOption(option =>
         option.setName(text.i.opt1Name[lang])
