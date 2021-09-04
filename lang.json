@@ -88,5 +88,79 @@
             "eng":"Added rolls",
             "esp":"Suma de las tiradas"
         }
+    },
+    "c":{
+        "name":{
+            "eng":"characteristic",
+            "esp":"caracteristica"
+        },
+        "description":{
+            "eng":"Generic roll (includes fire weapons results)",
+            "esp":"Tirada de característica (incluye resultados para armas de fuego)"
+        },
+        "opt1Name":{
+            "eng":"characteristic",
+            "esp":"caracteristica"
+        },
+        "opt1Description":{
+            "eng":"Characteristic value to use",
+            "esp":"Puntaje de la característica a usar"
+        },
+        "opt2Name":{
+            "eng":"bonifications",
+            "esp":"bonificaciones"
+        },
+        "opt2Description":{
+            "eng":"Bonifications (0 or more)",
+            "esp":"Bonificaciones (0 o más)"
+        },
+        "opt3Name":{
+            "eng":"penalizations",
+            "esp":"penalizaciones"
+        },
+        "opt3Description":{
+            "eng":"Penalizations (0 or more)",
+            "esp":"Penalizaciones (0 o más)"
+        },
+        "message1":{
+            "eng":"Bonifications",
+            "esp":"Bonificaciones"
+        },
+        "message2":{
+            "eng":"Penalizations",
+            "esp":"Penalizaciones"
+        },
+        "message3":{
+            "eng":"Spectacular success margin",
+            "esp":"Margen de éxito espectacular"
+        },
+        "message4":{
+            "eng":"Disastrous failure margin",
+            "esp":"Margen de fallo desastroso"
+        },
+        "message5":{
+            "eng":"Failure margin",
+            "esp":"Margen de fallo"
+        },
+        "message6":{
+            "eng":"Success margin",
+            "esp":"Margen de éxito"
+        },
+        "message7":{
+            "eng":"Bon.",
+            "esp":"Bon."
+        },
+        "message8":{
+            "eng":"Pen.",
+            "esp":"Pen."
+        },
+        "message9":{
+            "eng":"Fire weapon damage",
+            "esp":"Daño de arma de fuego"
+        },
+        "message10":{
+            "eng":"Characteristic",
+            "esp":"Característica"
+        }
     }
 }

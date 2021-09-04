@@ -4,31 +4,34 @@ const roll = require('../modules/Roll');
 const between = require('../modules/Between');
 const weaponFailure = require('../modules/WeaponFailure');
 
+const lang = process.env.LANGUAGE;
+const text = require('../lang.json');
+
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('c')
-    .setDescription(`Tirada de característica (incluye resultados para armas de fuego)`)
+    .setName(text.c.name[lang])
+    .setDescription(text.c.description[lang])
     .addStringOption(option =>
-        option.setName('caracteristica')
-        .setDescription('Puntaje de la característica a usar')
+        option.setName(text.c.opt1Name[lang])
+        .setDescription(text.c.opt1Description[lang])
         .setRequired(true)
     )
     .addStringOption(option =>
-        option.setName('bonificacion')
-        .setDescription('Bonificaciones (0 o más)')
+        option.setName(text.c.opt2Name[lang])
+        .setDescription(text.c.opt3Description[lang])
         .setRequired(true)
     )
     .addStringOption(option =>
-        option.setName('penalizacion')
-        .setDescription('Penalizaciones (0 o más)')
+        option.setName(text.c.opt3Name[lang])
+        .setDescription(text.c.opt3Description[lang])
         .setRequired(true)
     ),
     async execute(interaction) {
 
         const args = {
-            cha : between(interaction.options.getString('caracteristica'),0,99),
-            bon : between(interaction.options.getString('bonificacion',0,99)),
-            pen : between(interaction.options.getString('penalizacion',0,99))
+            cha : between(interaction.options.getString(text.c.opt1Name[lang]),0,99),
+            bon : between(interaction.options.getString(text.c.opt2Name[lang],0,99)),
+            pen : between(interaction.options.getString(text.c.opt3Name[lang],0,99))
         }
 
         let diceRolls = {
@@ -64,14 +67,14 @@ module.exports = {
         const message = {
             bon : (function() {
                 if (args.bon > 0) {
-                    return ` / Bonificaciones: ${args.bon}`
+                    return ` / ${text.c.message1[lang]}: ${args.bon}`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
                 if (args.pen > 0) {
-                    return ` / Penalizaciones: ${args.pen}`
+                    return ` / ${text.c.message2[lang]}: ${args.pen}`
                 } else {
                     return ''
                 }
@@ -79,15 +82,15 @@ module.exports = {
             result : (function() {
                 if (diceRolls.crit) {
                     if (diceRolls.crit == 'crit1') {
-                        return `**Margen de éxito espectacular: __${margin}__**`
+                        return `**${text.c.message3[lang]}: __${margin}__**`
                     } else {
-                        return `**Margen de fallo desastroso: __${margin}__**`
+                        return `**${text.c.message4[lang]}: __${margin}__**`
                     }
                 }
                 if (margin < 0) {
-                    return `**Margen de fallo: __${margin}__**`
+                    return `**${text.c.message5[lang]}: __${margin}__**`
                 } else {
-                    return `**Margen de éxito: __${margin}__**`
+                    return `**${text.c.message6[lang]}: __${margin}__**`
                 }
             }()),
             bonpen : (function() {
@@ -95,10 +98,10 @@ module.exports = {
                     let textBon = '';
                     let textPen = '';
                     if (args.bon > 0) {
-                        textBon = ` Bon.: **${diceRolls.arrBon}**`
+                        textBon = ` ${text.c.message7[lang]}: **${diceRolls.arrBon}**`
                     }
                     if (args.pen > 0) {
-                        textPen = ` Pen.: **${diceRolls.arrPen}**`
+                        textPen = ` ${text.c.message8[lang]}: **${diceRolls.arrPen}**`
                     }
                     return (textBon + textPen)
                 } else {
@@ -109,7 +112,7 @@ module.exports = {
                 if (margin > -1) {
                     let result = margin + diceRolls.arrPen.reduce((x,y)=>x+y);
                     if (diceRolls.crit == 'crit1') { result += diceRolls.arrPen.reduce((x,y)=>x+y) };
-                    return `*(Daño de arma de fuego: ${result})*\n`
+                    return `*(${text.c.message9[lang]}: ${result})*\n`
                 } else {
                     return ''
                 }
@@ -124,7 +127,7 @@ module.exports = {
         }
 
         await interaction.reply(
-            `Característica: ${args.cha} ${message.bon}${message.pen}\n`+
+            `${text.c.message10[lang]}: ${args.cha} ${message.bon}${message.pen}\n`+
             `>>> *d20: **${diceRolls.d20}**`+
             `${message.bonpen}*\n`+
             `${message.result}\n`+
