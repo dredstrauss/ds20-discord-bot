@@ -42,5 +42,51 @@
             "eng":"Initiative result:",
             "esp":"Resultado de iniciativa:"
         }
+    },
+    "d":{
+        "name":{
+            "eng":"dice",
+            "esp":"dados"
+        },
+        "description":{
+            "eng":"Generic dice roll",
+            "esp":"Tirada de dados genérica"
+        },
+        "opt1Name":{
+            "eng":"sides",
+            "esp":"caras"
+        },
+        "opt1Description":{
+            "eng":"Number of sides (ie: 4, 6, 8, 10, 12, 20, 100)",
+            "esp":"Caras del dado (ej.: 4, 6, 8, 10, 12, 20, 100)"
+        },
+        "opt2Name":{
+            "eng":"dice",
+            "esp":"cantidad"
+        },
+        "opt2Description":{
+            "eng":"How many dice to roll (1 or more)",
+            "esp":"Cantidad de dados similares a lanzar (1 o más)"
+        },
+        "message1":{
+            "eng":"Die",
+            "esp":"Dado"
+        },
+        "message2":{
+            "eng":"Result",
+            "esp":"Resultado"
+        },
+        "message3":{
+            "eng":"Dice",
+            "esp":"Dados"
+        },
+        "message4":{
+            "eng":"Results",
+            "esp":"Resultados"
+        },
+        "message5":{
+            "eng":"Added rolls",
+            "esp":"Suma de las tiradas"
+        }
     }
 }
