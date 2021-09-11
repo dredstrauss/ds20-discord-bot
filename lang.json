@@ -1,8 +1,8 @@
 {
     "test":{
         "name":{
-            "eng":"test",
-            "esp":"test"
+            "eng":"sayhi",
+            "esp":"saluda"
         },
         "description":{
             "eng":"Check if the Bot is running",
@@ -17,7 +17,7 @@
             "esp":"Prueba de tirada de dado d20:"
         }
     },
-    "i":{
+    "rollInitiative":{
         "name":{
             "eng":"initiative",
             "esp":"iniciativa"
@@ -43,7 +43,7 @@
             "esp":"Resultado de iniciativa:"
         }
     },
-    "d":{
+    "rollDice":{
         "name":{
             "eng":"dice",
             "esp":"dados"
@@ -89,7 +89,7 @@
             "esp":"Suma de las tiradas"
         }
     },
-    "c":{
+    "rollCharacteristic":{
         "name":{
             "eng":"characteristic",
             "esp":"caracteristica"
@@ -161,24 +161,24 @@
         "message10":{
             "eng":"Characteristic",
             "esp":"Característica"
-        }
-    },
-    "weaponFailure":{
-        "message1":{
-            "eng":"Mechanical failure (fire weapon damaged)",
-            "esp":"Falla mecánica (arma de fuego dañada)"
         },
-        "message2":{
-            "eng":"Major jamming (fire weapon jammed)",
-            "esp":"Traba mayor (arma de fuego atascada)"
-        },
-        "message3":{
-            "eng":"Minor jamming (faulty bullet)",
-            "esp":"Traba menor (bala defectuosa)"
-        },
-        "message4":{
-            "eng":"Stray bullet (shot hits another target)",
-            "esp":"Bala perdida (disparo llega a otro objetivo)"
+        "weaponFailure":{
+            "message1":{
+                "eng":"Mechanical failure (fire weapon damaged)",
+                "esp":"Falla mecánica (arma de fuego dañada)"
+            },
+            "message2":{
+                "eng":"Major jamming (fire weapon jammed)",
+                "esp":"Traba mayor (arma de fuego atascada)"
+            },
+            "message3":{
+                "eng":"Minor jamming (faulty bullet)",
+                "esp":"Traba menor (bala defectuosa)"
+            },
+            "message4":{
+                "eng":"Stray bullet (shot hits another target)",
+                "esp":"Bala perdida (disparo llega a otro objetivo)"
+            }
         }
     }
 }

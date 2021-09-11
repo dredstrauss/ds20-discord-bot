@@ -1,7 +1,7 @@
 {
-  "name": "discord-ds20-dice-roller",
-  "version": "1.2.1",
-  "description": "DS-20 Discord bot dice-roller",
+  "name": "ds20-discord-bot",
+  "version": "1.2.2",
+  "description": "DS-20 Discord Bot",
   "main": "index.js",
   "engines": {
     "node": "16.6.x",
@@ -14,9 +14,9 @@
   "author": "Dred Strauss",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dredstrauss/discord-ds20-dice-roller/issues"
+    "url": "https://github.com/dredstrauss/ds20-discord-bot/issues"
   },
-  "homepage": "https://github.com/dredstrauss/discord-ds20-dice-roller#readme",
+  "homepage": "https://github.com/dredstrauss/ds20-discord-bot#readme",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
     "@discordjs/rest": "^0.1.0-canary.0",

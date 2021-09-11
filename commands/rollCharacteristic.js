@@ -9,29 +9,29 @@ const text = require('../lang.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName(text.c.name[lang])
-    .setDescription(text.c.description[lang])
+    .setName(text.rollCharacteristic.name[lang])
+    .setDescription(text.rollCharacteristic.description[lang])
     .addStringOption(option =>
-        option.setName(text.c.opt1Name[lang])
-        .setDescription(text.c.opt1Description[lang])
+        option.setName(text.rollCharacteristic.opt1Name[lang])
+        .setDescription(text.rollCharacteristic.opt1Description[lang])
         .setRequired(true)
     )
     .addStringOption(option =>
-        option.setName(text.c.opt2Name[lang])
-        .setDescription(text.c.opt3Description[lang])
+        option.setName(text.rollCharacteristic.opt2Name[lang])
+        .setDescription(text.rollCharacteristic.opt3Description[lang])
         .setRequired(true)
     )
     .addStringOption(option =>
-        option.setName(text.c.opt3Name[lang])
-        .setDescription(text.c.opt3Description[lang])
+        option.setName(text.rollCharacteristic.opt3Name[lang])
+        .setDescription(text.rollCharacteristic.opt3Description[lang])
         .setRequired(true)
     ),
     async execute(interaction) {
 
         const args = {
-            cha : between(interaction.options.getString(text.c.opt1Name[lang]),0,99),
-            bon : between(interaction.options.getString(text.c.opt2Name[lang],0,99)),
-            pen : between(interaction.options.getString(text.c.opt3Name[lang],0,99))
+            cha : between(interaction.options.getString(text.rollCharacteristic.opt1Name[lang]),0,99),
+            bon : between(interaction.options.getString(text.rollCharacteristic.opt2Name[lang],0,99)),
+            pen : between(interaction.options.getString(text.rollCharacteristic.opt3Name[lang],0,99))
         }
 
         let diceRolls = {
@@ -67,14 +67,14 @@ module.exports = {
         const message = {
             bon : (function() {
                 if (args.bon > 0) {
-                    return ` / ${text.c.message1[lang]}: ${args.bon}`
+                    return ` / ${text.rollCharacteristic.message1[lang]}: ${args.bon}`
                 } else {
                     return ''
                 }
             }()),
             pen : (function() {
                 if (args.pen > 0) {
-                    return ` / ${text.c.message2[lang]}: ${args.pen}`
+                    return ` / ${text.rollCharacteristic.message2[lang]}: ${args.pen}`
                 } else {
                     return ''
                 }
@@ -82,15 +82,15 @@ module.exports = {
             result : (function() {
                 if (diceRolls.crit) {
                     if (diceRolls.crit == 'crit1') {
-                        return `**${text.c.message3[lang]}: __${margin}__**`
+                        return `**${text.rollCharacteristic.message3[lang]}: __${margin}__**`
                     } else {
-                        return `**${text.c.message4[lang]}: __${margin}__**`
+                        return `**${text.rollCharacteristic.message4[lang]}: __${margin}__**`
                     }
                 }
                 if (margin < 0) {
-                    return `**${text.c.message5[lang]}: __${margin}__**`
+                    return `**${text.rollCharacteristic.message5[lang]}: __${margin}__**`
                 } else {
-                    return `**${text.c.message6[lang]}: __${margin}__**`
+                    return `**${text.rollCharacteristic.message6[lang]}: __${margin}__**`
                 }
             }()),
             bonpen : (function() {
@@ -98,10 +98,10 @@ module.exports = {
                     let textBon = '';
                     let textPen = '';
                     if (args.bon > 0) {
-                        textBon = ` ${text.c.message7[lang]}: **${diceRolls.arrBon}**`
+                        textBon = ` ${text.rollCharacteristic.message7[lang]}: **${diceRolls.arrBon}**`
                     }
                     if (args.pen > 0) {
-                        textPen = ` ${text.c.message8[lang]}: **${diceRolls.arrPen}**`
+                        textPen = ` ${text.rollCharacteristic.message8[lang]}: **${diceRolls.arrPen}**`
                     }
                     return (textBon + textPen)
                 } else {
@@ -112,7 +112,7 @@ module.exports = {
                 if (margin > -1) {
                     let result = margin + diceRolls.arrPen.reduce((x,y)=>x+y);
                     if (diceRolls.crit == 'crit1') { result += diceRolls.arrPen.reduce((x,y)=>x+y) };
-                    return `*(${text.c.message9[lang]}: ${result})*\n`
+                    return `*(${text.rollCharacteristic.message9[lang]}: ${result})*\n`
                 } else {
                     return ''
                 }
@@ -127,7 +127,7 @@ module.exports = {
         }
 
         await interaction.reply(
-            `${text.c.message10[lang]}: ${args.cha} ${message.bon}${message.pen}\n`+
+            `${text.rollCharacteristic.message10[lang]}: ${args.cha} ${message.bon}${message.pen}\n`+
             `>>> *d20: **${diceRolls.d20}**`+
             `${message.bonpen}*\n`+
             `${message.result}\n`+

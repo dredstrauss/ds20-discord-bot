@@ -8,16 +8,16 @@ const text = require('../lang.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName(text.i.name[lang])
-    .setDescription(text.i.description[lang])
+    .setName(text.rollInitiative.name[lang])
+    .setDescription(text.rollInitiative.description[lang])
     .addStringOption(option =>
-        option.setName(text.i.opt1Name[lang])
-        .setDescription(text.i.opt1Description[lang])
+        option.setName(text.rollInitiative.opt1Name[lang])
+        .setDescription(text.rollInitiative.opt1Description[lang])
         .setRequired(true)
     ),
     async execute(interaction) {
 
-        let ini = between(interaction.options.getString(text.i.opt1Name[lang]),-99,99);
+        let ini = between(interaction.options.getString(text.rollInitiative.opt1Name[lang]),-99,99);
 
         let results = {
             d10 : 0,
@@ -28,9 +28,9 @@ module.exports = {
         results.ini = results.d10 + ini;
 
         await interaction.reply(
-            `${text.i.message1[lang]} ${ini}\n`+
+            `${text.rollInitiative.message1[lang]} ${ini}\n`+
             `>>> *d10: **${results.d10}***\n`+
-            `**${text.i.message2[lang]} __${results.ini}__**`
+            `**${text.rollInitiative.message2[lang]} __${results.ini}__**`
         );
     },
 };

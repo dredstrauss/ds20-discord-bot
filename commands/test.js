@@ -7,7 +7,7 @@ const text = require('../lang.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('test')
+    .setName(text.test.name[lang])
     .setDescription(text.test.description[lang]),
     async execute(interaction) {
         await interaction.reply(
