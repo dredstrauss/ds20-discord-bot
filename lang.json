@@ -180,5 +180,129 @@
                 "esp":"Bala perdida (disparo llega a otro objetivo)"
             }
         }
+    },
+    "compendium":{
+        "name":{
+            "eng":"compendium",
+            "esp":"compendio"
+        },
+        "description":{
+            "eng":"Consult the lists from the Dread S-20 online manual",
+            "esp":"Consulta las listas del manual en línea de Dread S-20"
+        },
+        "opt1Name":{
+            "eng":"weapons",
+            "esp":"armas"
+        },
+        "opt1Description":{
+            "eng":"Weapons lists",
+            "esp":"Listas de armas"
+        },
+        "opt2Name":{
+            "eng":"id",
+            "esp":"id"
+        },
+        "opt2Description":{
+            "eng":"Search by Id",
+            "esp":"Buscar por Id"
+        },
+        "natural1":{
+            "eng":"Natural weapons",
+            "esp":"Armas naturales"
+        },
+        "natural2":{
+            "eng":"natural",
+            "esp":"natural"
+        },
+        "mele1":{
+            "eng":"Mele weapons",
+            "esp":"Armas cuerpo a cuerpo"
+        },
+        "mele2":{
+            "eng":"mele",
+            "esp":"cc"
+        },
+        "fire1":{
+            "eng":"Fire weapons",
+            "esp":"Armas de fuego"
+        },
+        "fire2":{
+            "eng":"fire",
+            "esp":"fuego"
+        },
+        "explosives1":{
+            "eng":"Explosives",
+            "esp":"Explosivos"
+        },
+        "explosives2":{
+            "eng":"explosive",
+            "esp":"explosivo"
+        },
+        "weaponHeaders":{
+            "name":{
+                "eng": "Name",
+                "esp": "Nombre"
+            },
+            "mlw":{
+                "eng": "MLW",
+                "esp": "MHL"
+            },
+            "msw":{
+                "eng": "MSW",
+                "esp": "MHG"
+            },
+            "cal":{
+                "eng": "Caliber",
+                "esp": "Calibre"
+            },
+            "cap":{
+                "eng": "Capacity",
+                "esp": "Cargador"
+            },
+            "rea":{
+                "eng": "Reach",
+                "esp": "Alcance"
+            },
+            "d":{
+                "eng": "Dexterity",
+                "esp": "Destreza"
+            },
+            "f":{
+                "eng": "Fortitude",
+                "esp": "Fortaleza"
+            },
+            "special":{
+                "eng": "Special",
+                "esp": "Especial"
+            },
+            "price":{
+                "eng": "Price",
+                "esp": "Precio"
+            },
+            "type":{
+                "eng": "Type",
+                "esp": "Tipo"
+            },
+            "category":{
+                "eng": "Category",
+                "esp": "Categoría"
+            },
+            "access":{
+                "eng": "Access",
+                "esp": "Acceso"
+            }
+        },
+        "message1":{
+            "eng":"Nothing found :(",
+            "esp":"No se encontró nada :("
+        },
+        "message2":{
+            "eng":"Success!",
+            "esp":"Éxito!"
+        },
+        "message3":{
+            "eng":" ... The whole list is larger than the maximun allowed messange length. Try filtering your search",
+            "esp":" ... La lista completa supera el límite de caracteres de este mensaje. Intenta filtrar tu búsqueda"
+        }
     }
 }
