@@ -22,7 +22,7 @@ const writeList = (arr) => {
 const writeDetail = (weapon) => {
     const wh = text.compendium.weaponHeaders;
     let df = weapon.d > weapon.f ? `${wh.d[lang]}: ${weapon.d}` : `${wh.f[lang]}: ${weapon.f}`;
-    let cal = weapon.cal != '' ? `\n${wh.cal[lang]}: ${weapon.cal}` : '';
+    let cal = weapon.cal != '' && weapon.cal != null ? `\n${wh.cal[lang]}: ${weapon.cal}` : '';
     let cap = weapon.cap > 0 ? `\n${wh.cap[lang]}: ${weapon.cap}` : '';
     let rea = weapon.rea > 0 ? `\n${wh.rea[lang]}: ${weapon.rea} m` : '';
     let special = weapon.special != null ? `\n${wh.special[lang]}: ${weapon.special}` : '';
