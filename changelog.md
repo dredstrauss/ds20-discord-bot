@@ -1,4 +1,4 @@
-## v1.2.3 (current)
+## v1.3.0 (current)
 
 - Access to weapons database added via "compendium" command
 
