@@ -4,12 +4,13 @@ Invitation link: [ds20-discord-bot](https://discord.com/api/oauth2/authorize?cli
 
 ## Commands (eng):
 
-Slash command | Options | Description
---------------|---------|------------
-/sayhi         |         |Check bot status
-/characteristic            |[characteristic][bonifications][penalizations]|Regular characteristic dice roll
-/initiative            |[initiative modifier]|Initiative roll
-/dice            |[die faces][dice number]|Generic dice roll
+Slash command       | Options               | Description
+--------------------|-----------------------|------------
+/sayhi              |         |Check bot status
+/characteristic     |[characteristic][bonifications][penalizations]|Regular characteristic dice roll
+/initiative         |[initiative modifier]|Initiative roll
+/dice               |[die faces][dice number]|Generic dice roll
+/compendium         |[list:item types][opt: search by id]|Items search, by list or single item details
 
 > **: slash commands vary depending on the selected language*
 

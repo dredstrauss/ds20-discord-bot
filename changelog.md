@@ -1,9 +1,13 @@
-## v1.2.1
+### v1.2.3 (current)
 
-- Language support added to weapon failure messages
-- Invitation link updated with threads permissions
+- Access to weapons database added via "compendium" command
 
 ## v1.2.2
 
 - Dice roll command names updated
 - Test command name updated
+
+## v1.2.1
+
+- Language support added to weapon failure messages
+- Invitation link updated with threads permissions
